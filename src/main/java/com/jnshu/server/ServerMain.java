@@ -17,7 +17,7 @@ public class ServerMain {
     public static void main(String[] args) throws Exception {
         // System.setProperty("java.rmi.server.hostname", "192.168.0.115");
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring/applicationContext-*.xml");
-        // 本地测试是jvm虚拟机的地址
-        System.out.println("Server已启动, 绑定ip为: " + java.net.InetAddress.getLocalHost().getHostAddress());
+        // System.out.println("Server已启动, 绑定ip为: " + java.net.InetAddress.getLocalHost().getHostAddress());
+        System.out.println("Server已启动" );
     }
 }
