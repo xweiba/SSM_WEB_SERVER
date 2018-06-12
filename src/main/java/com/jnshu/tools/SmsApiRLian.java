@@ -33,8 +33,11 @@ public class SmsApiRLian {
         this.appId = AppId;
     }
 
+    public boolean sendSMS(String telephone_Number, String SessionId){
+        return sendSMStReal(telephone_Number, SessionId);
+    }
 
-    public boolean sendSMS(String telephone_Number, String SessionId) {
+    private boolean sendSMStReal(String telephone_Number, String SessionId) {
         Rand_Code = RandNum.getRandLength(4);
         logger.debug("Rand_Code: " + Rand_Code);
         HashMap<String, Object> result = null;
