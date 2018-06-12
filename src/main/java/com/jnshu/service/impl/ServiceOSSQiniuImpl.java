@@ -34,6 +34,11 @@ public class ServiceOSSQiniuImpl implements ServiceOSS{
     }
 
     @Override
+    public Boolean updateFile(Integer id, byte[] bytes, String fileName, String fileType) {
+        return ossapi.updateFile(id, bytes, fileName, fileType);
+    }
+
+    @Override
     public Boolean deleteFile(String keyFile) {
         return ossapi.deleteFile(keyFile);
     }

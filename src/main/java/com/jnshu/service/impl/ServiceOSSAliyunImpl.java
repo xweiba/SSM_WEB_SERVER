@@ -33,6 +33,11 @@ public class ServiceOSSAliyunImpl implements ServiceOSS {
     }
 
     @Override
+    public Boolean updateFile(Integer id, byte[] bytes, String fileName, String fileType) {
+        return null;
+    }
+
+    @Override
     public Boolean deleteFile(String keyFile) {
         return ossapi.deleteFile(keyFile);
     }

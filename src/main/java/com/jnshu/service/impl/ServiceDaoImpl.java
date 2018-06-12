@@ -69,7 +69,9 @@ public class ServiceDaoImpl implements ServiceDao {
 
     @Override
     public Integer insertStudent(StudentCustom studentCustom) throws Exception {
-        studentCustom.setCreate_time(System.currentTimeMillis() / 1000);
+        studentCustom.setCreate_time(System.currentTimeMillis());
+        memCachedClient.delete("studentAll");
+        logger.debug("studentId  studentAll 缓存已清空");
         return studentDao.insertStudentCustom(studentCustom);
     }
 
@@ -86,7 +88,7 @@ public class ServiceDaoImpl implements ServiceDao {
 
     @Override
     public boolean updateStudent(StudentCustom studentCustom) throws Exception {
-        studentCustom.setUpdate_time(System.currentTimeMillis() / 1000);
+        studentCustom.setUpdate_time(System.currentTimeMillis());
         if (studentDao.updateStudentCustom(studentCustom)) {
             memCachedClient.delete("student" + studentCustom.getId());
             memCachedClient.delete("studentAll");
@@ -138,10 +140,8 @@ public class ServiceDaoImpl implements ServiceDao {
         return userAuthDao.userAuth(userAuth);
     }
 
-
     @Override
     public Boolean findUserAuthByid(Integer id) throws Exception {
         return userAuthDao.findUserAuthByid(id);
     }
-
 }
