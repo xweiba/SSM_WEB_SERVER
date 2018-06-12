@@ -25,8 +25,8 @@
         <property name="serviceName" value="ServerALiYunOSS"/>
         <property name="service" ref="serviceOSSAliyunImpl"/>
         <property name="serviceInterface" value="com.jnshu.service.ServiceOSS"/>
-        <property name="registryPort" value="9090" />
-        <property name="servicePort" value="7878" />
+        <property name="registryPort" value="9090"/>
+        <property name="servicePort" value="7878"/>
     </bean>
 
     <!-- OSS 七牛云 -->
@@ -35,8 +35,8 @@
         <property name="serviceName" value="ServerQiNiuYunOSS"/>
         <property name="service" ref="serviceOSSQiniuImpl"/>
         <property name="serviceInterface" value="com.jnshu.service.ServiceOSS"/>
-        <property name="registryPort" value="9090" />
-        <property name="servicePort" value="7878" />
+        <property name="registryPort" value="9090"/>
+        <property name="servicePort" value="7878"/>
     </bean>
 
     <!-- Mail SendCloudMail -->
@@ -44,30 +44,30 @@
           class="org.springframework.remoting.rmi.RmiServiceExporter">
         <property name="serviceName" value="ServerMailSendCloud"/>
         <property name="service" ref="serviceMailSendCloudImpl"/>
-        <property name="serviceInterface" value="com.jnshu.service.ServiceMail"/>
-        <property name="registryPort" value="9090" />
-        <property name="servicePort" value="7878" />
+        <property name="serviceInterface"
+                  value="com.jnshu.service.ServiceMail"/>
+        <property name="registryPort" value="9090"/>
+        <property name="servicePort" value="7878"/>
     </bean>
 
-    <!-- OSS SendCloudMail -->
+    <!-- SMS 容联短信 -->
     <bean id="serverSMSRLian"
           class="org.springframework.remoting.rmi.RmiServiceExporter">
         <property name="serviceName" value="ServerSMSRLian"/>
         <property name="service" ref="serviceSMSRLianImpl"/>
         <property name="serviceInterface" value="com.jnshu.service.ServiceSMS"/>
-        <property name="registryPort" value="9090" />
-        <property name="servicePort" value="7878" />
+        <property name="registryPort" value="9090"/>
+        <property name="servicePort" value="7878"/>
     </bean>
-
 
     <!-- 缓存 -->
     <bean id="serverCached"
           class="org.springframework.remoting.rmi.RmiServiceExporter">
         <property name="serviceName" value="ServerCachedMem"/>
         <property name="service" ref="serviceCacheMemImpl"/>
-        <property name="serviceInterface" value="com.jnshu.service.ServiceCache"/>
-        <property name="registryPort" value="9090" />
-        <property name="servicePort" value="7878" />
+        <property name="serviceInterface"
+                  value="com.jnshu.service.ServiceCache"/>
+        <property name="registryPort" value="9090"/>
+        <property name="servicePort" value="7878"/>
     </bean>
-
 </beans>
