@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
@@ -186,6 +187,11 @@ public class OssApiQiNiuYun {
 
     public Boolean updateFile(Integer id, InputStream fi, String fileName, String fileType) {
         return updateFileReal(id, fi, fileName, null);
+    }
+
+    public Boolean updateFile(Integer id, byte[] bytes, String fileName, String fileType) {
+        InputStream inputStream = new ByteArrayInputStream(bytes);
+        return updateFileReal(id, inputStream, fileName, fileType);
     }
 
     private Boolean updateFileReal(Integer id, InputStream inputStream, String fileName, String fileType) {
